@@ -9,13 +9,14 @@ https://projecteuler.net/problem=1
 """
 
 
-def _main() -> int:
+def _main(N: int) -> int:
+    """Возвращает сумму всех чисел меньше N кратных 3 или 5"""
     summ = 0
-    for i in range(1000):
+    for i in range(N):
         if i % 3 == 0 or i % 5 == 0:
             summ += i
     return summ
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(1000))

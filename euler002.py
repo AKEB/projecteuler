@@ -11,14 +11,15 @@ https://projecteuler.net/problem=2
 """
 
 
-def _main() -> int:
+def _main(N: int) -> int:
+    """Возвращает сумму чисел ряда Фибоначчи меньше N"""
     summ = 0
     f1 = 1
     f2 = 1
     while True:
         fib = f1 + f2
         f1, f2 = f2, fib
-        if fib > 4_000_000:
+        if fib > N:
             break
         if fib % 2 == 0:
             summ += fib
@@ -26,4 +27,4 @@ def _main() -> int:
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(4000000))

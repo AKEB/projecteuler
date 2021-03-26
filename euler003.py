@@ -9,7 +9,8 @@ https://projecteuler.net/problem=3
 """
 
 
-def _prime(num):
+def _prime(num: int) -> set:
+    """Возвращает делители числа"""
     prime = set()
     for i in range(1, int(((num + 1) ** 0.5) * 10 // 10)):
         if num % i == 0:
@@ -18,17 +19,17 @@ def _prime(num):
     return prime
 
 
-def _main() -> int:
-    tmp = 600851475143
-    prime = _prime(tmp)
+def _main(N: int) -> int:
+    """Возвращает максимальный простой делитель числа N"""
+    prime = _prime(N)
     simple = []
     for test in prime:
         primeNew = _prime(test)
         if len(primeNew) == 1:
             simple.append(test)
     simple.sort()
-    return simple
+    return simple[len(simple) - 1]
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(600851475143))

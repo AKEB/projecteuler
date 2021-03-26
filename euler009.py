@@ -15,19 +15,15 @@ https://projecteuler.net/problem=9
 """
 
 
-def _main():
-    a = 1
-    b = 1
-    c = 1000 - a - b
-    for a in range(1, 1000 - 1):
-        for b in range(1, 1000 - 1):
-            c = 1000 - a - b
-            if a > c or b > c:
-                break
-            if a ** 2 + b ** 2 == c ** 2:
-                return a * b * c
+def _main(N: int) -> int:
+    for a in range(1, N - 1):
+        for b in range(1, N - 1):
+            c = N - a - b
+            if a < b < c:
+                if a ** 2 + b ** 2 == c ** 2:
+                    return a * b * c
     return 0
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(1000))

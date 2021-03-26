@@ -9,19 +9,10 @@ https://projecteuler.net/problem=10
 """
 
 
-def _main():
-    a = 1
-    b = 1
-    c = 1000 - a - b
-    for a in range(1, 1000 - 1):
-        for b in range(1, 1000 - 1):
-            c = 1000 - a - b
-            if a > c or b > c:
-                break
-            if a ** 2 + b ** 2 == c ** 2:
-                return a * b * c
-    return 0
+def _main(N: int) -> int:
+    """Возвращает сумму простых чисел"""
+    pass
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(10))

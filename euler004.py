@@ -9,7 +9,8 @@ https://projecteuler.net/problem=4
 """
 
 
-def isPolindrom(string: str) -> bool:
+def isPalindrom(string: str) -> bool:
+    """Определяет является ли строка палиндромом"""
     chars = list(string)
     lenght = len(chars)
     for i in range((lenght // 2)):
@@ -18,14 +19,21 @@ def isPolindrom(string: str) -> bool:
     return True
 
 
-def _main():
+def _main(N: int) -> int:
+    """Возвращает максимальное число палиндром из произведения чисел до N"""
     response = 0
-    for i in range(1000):
-        for j in range(1000):
-            if isPolindrom(str(i * j)):
-                response = max(response, i * j)
+    for i in range(N - 1, 0, -1):
+        for j in range(i, 0, -1):
+            multi = i * j
+            if multi < 10:
+                continue
+            if multi < response:
+                continue
+            if isPalindrom(str(multi)):
+                # print(multi, "=", i, "x", j)
+                response = max(response, multi)
     return response
 
 
 if __name__ == "__main__":
-    print(_main())
+    print(_main(1000))
