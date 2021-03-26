@@ -2,6 +2,6 @@
 
 Решение задач из проекта Эйлера на языке Python
 
-[https://projecteuler.net/]
+[English](https://projecteuler.net/)
 
-[https://euler.jakumo.org/problems.html]
+[Russian](https://euler.jakumo.org/problems.html)
