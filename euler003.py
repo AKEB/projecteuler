@@ -12,7 +12,7 @@ https://projecteuler.net/problem=3
 def _prime(num: int) -> set:
     """Возвращает делители числа"""
     prime = set()
-    for i in range(1, int(((num + 1) ** 0.5) * 10 // 10)):
+    for i in range(1, int(((num + 1) ** 0.5))):
         if num % i == 0:
             if i % 2 > 0:
                 prime.add(i)
