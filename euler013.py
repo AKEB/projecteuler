@@ -215,9 +215,11 @@ def summ_strings(string1: str, string2: str) -> str:
     reverse_string2 = string2[::-1]
     summ = ""
     buffer = 0
+    if len(reverse_string2) < maxlen:
+        reverse_string2 += "0" * (maxlen - len(reverse_string2))
+    if len(reverse_string1) < maxlen:
+        reverse_string1 += "0" * (maxlen - len(reverse_string1))
     for i in range(maxlen):
-        if len(reverse_string2) <= i:
-            reverse_string2 += "0"
         plus = str(int(reverse_string1[i]) + int(reverse_string2[i]) + buffer)
         plus = plus[::-1]
         summ += str(plus[0])
