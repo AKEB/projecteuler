@@ -7,7 +7,6 @@ Starting in the top left corner of a 2×2 grid, and only being able to move to t
 How many such routes are there through a 20×20 grid?
 https://projecteuler.net/problem=15
 """
-import pprint
 
 
 def _main(N: int, M: int) -> int:
@@ -17,7 +16,6 @@ def _main(N: int, M: int) -> int:
         for j in range(1, M + 1):
             array[i][j] = array[i - 1][j] + array[i][j - 1]
     return array[N][M]
-    pass
 
 
 if __name__ == "__main__":
