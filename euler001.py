@@ -10,7 +10,18 @@ https://projecteuler.net/problem=1
 
 
 def _main(N: int) -> int:
-    """Возвращает сумму всех чисел меньше N кратных 3 или 5"""
+    """Возвращает сумму всех чисел меньше N кратных 3 или 5
+    :param N: int
+    :return: int
+    >>> _main(10)
+    23
+    >>> _main(20)
+    78
+    >>> _main(100)
+    2318
+    >>> _main(1000)
+    233168
+    """
     summ = 0
     for i in range(N):
         if i % 3 == 0 or i % 5 == 0:
@@ -19,4 +30,6 @@ def _main(N: int) -> int:
 
 
 if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
     print(_main(1000))
