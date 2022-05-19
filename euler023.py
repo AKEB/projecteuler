@@ -66,4 +66,6 @@ def _main(num: int) -> int:
 
 
 if __name__ == "__main__":
+    # from timeit import Timer
+    # print(Timer('print(_main(28123))', 'from __main__ import _main').timeit(1))
     print(_main(28123))
